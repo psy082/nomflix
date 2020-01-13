@@ -36,6 +36,8 @@ const SLink = styled(Link)`
   justify-content: center;
 `;
 
+const Login = styled(Link)``;
+
 export default withRouter(({ location: { pathname } }) => (
   <Header>
     <List>
