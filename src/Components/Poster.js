@@ -9,7 +9,8 @@ const Container = styled.div`
 
 const Image = styled.div`
   background-image: url(${props => props.bgUrl});
-  height: 180px;
+  width: ${props => (props.width ? props.width : "auto")};
+  height: ${props => (props.height ? props.height : "180px")};
   background-size: cover;
   background-position: center center;
   border-radius: 4px;
@@ -47,7 +48,16 @@ const Year = styled.span`
   color: rgba(255, 255, 255, 0.5);
 `;
 
-const Poster = ({ id, imageUrl, title, rating, year, isMovie = false }) => (
+const Poster = ({
+  id,
+  imageUrl,
+  title,
+  rating,
+  year,
+  isMovie = false,
+  height,
+  width
+}) => (
   <Link to={isMovie ? `/movie/${id}` : `/tv/${id}`}>
     <Container>
       <ImageContainer>
@@ -57,6 +67,8 @@ const Poster = ({ id, imageUrl, title, rating, year, isMovie = false }) => (
               ? `https://image.tmdb.org/t/p/w300${imageUrl}`
               : require("../assets/popcorn-time.png")
           }
+          height={height}
+          width={width}
         />
         <Rating>
           <span role="img" aria-label="rating">
