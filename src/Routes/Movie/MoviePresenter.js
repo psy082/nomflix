@@ -12,7 +12,7 @@ const Container = styled.div`
   padding: 20px;
 `;
 
-const HomePresenter = ({ nowPlaying, upcoming, popular, error, loading }) =>
+const MoviePresenter = ({ nowPlaying, upcoming, popular, error, loading }) =>
   loading ? (
     <Loader />
   ) : (
@@ -69,7 +69,7 @@ const HomePresenter = ({ nowPlaying, upcoming, popular, error, loading }) =>
     </Container>
   );
 
-HomePresenter.prototype = {
+MoviePresenter.prototype = {
   nowPlaying: PropTypes.array,
   upcoming: PropTypes.array,
   popular: PropTypes.array,
@@ -77,4 +77,4 @@ HomePresenter.prototype = {
   loading: PropTypes.bool.isRequired
 };
 
-export default HomePresenter;
+export default MoviePresenter;

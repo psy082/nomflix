@@ -12,7 +12,13 @@ export default class extends React.Component {
       result: null,
       loading: true,
       error: null,
-      isMovie: pathname.includes("/movie/")
+      isMovie: pathname.includes("/movie/"),
+
+      radioGroup: {
+        prod: true,
+        created: false,
+        seasons: false
+      }
     };
   }
 
@@ -45,8 +51,23 @@ export default class extends React.Component {
     }
   }
 
+  handleRadio = event => {
+    let obj = {};
+    obj[event.target.value] = event.target.checked;
+    this.setState({ radioGroup: obj });
+  };
+
   render() {
-    const { result, loading, error } = this.state;
-    return <DetailPresenter result={result} loading={loading} error={error} />;
+    const { result, loading, error, isMovie, radioGroup } = this.state;
+    return (
+      <DetailPresenter
+        result={result}
+        isMovie={isMovie}
+        loading={loading}
+        error={error}
+        radioGroup={radioGroup}
+        handleRadio={this.handleRadio}
+      />
+    );
   }
 }

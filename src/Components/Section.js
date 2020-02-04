@@ -16,14 +16,18 @@ const Title = styled.span`
 const Grid = styled.div`
   margin-top: 25px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, 125px);
+  grid-template-columns: ${props =>
+    props.width
+      ? `repeat(auto-fit, ${props.width})`
+      : `repeat(auto-fill, 125px)`};
+  -webkit-box-pack: center;
   grid-gap: 25px;
 `;
 
-const Section = ({ title, children }) => (
+const Section = ({ title, children, width }) => (
   <Container>
     <Title>{title}</Title>
-    <Grid>{children}</Grid>
+    <Grid width={width}>{children}</Grid>
   </Container>
 );
 

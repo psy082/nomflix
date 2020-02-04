@@ -36,7 +36,21 @@ const SLink = styled(Link)`
   justify-content: center;
 `;
 
-const Login = styled(Link)``;
+const LoginContainer = styled.li`
+  display: flex;
+  height: 50px;
+  width: calc(100vw - 80 * 4px);
+  justify-content: flex-end;
+  margin: 0 0 0 auto;
+`;
+
+const Login = styled(Link)`
+  height: 50px;
+  font-size: 12px;
+  font-weight: 200;
+  display: flex;
+  align-items: center;
+`;
 
 export default withRouter(({ location: { pathname } }) => (
   <Header>
@@ -50,6 +64,10 @@ export default withRouter(({ location: { pathname } }) => (
       <Item current={pathname === "/search"}>
         <SLink to="/search">Search</SLink>
       </Item>
+
+      <LoginContainer>
+        <Login to="/">LOGIN</Login>
+      </LoginContainer>
     </List>
   </Header>
 ));
