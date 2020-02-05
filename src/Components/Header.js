@@ -55,8 +55,8 @@ const Login = styled(Link)`
 export default withRouter(({ location: { pathname } }) => (
   <Header>
     <List>
-      <Item current={pathname === "/"}>
-        <SLink to="/">Movies</SLink>
+      <Item current={pathname === "/movie"}>
+        <SLink to="/movie">Movies</SLink>
       </Item>
       <Item current={pathname === "/tv"}>
         <SLink to="/tv">TV</SLink>
