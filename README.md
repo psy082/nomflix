@@ -2,6 +2,8 @@
 
 React와 [themoviedb api](https://www.themoviedb.org/documentation/api)를 이용하여 제작한 간단한 영화/TV 프로그램 정보 제공 웹사이트이다.
 
+[Demo 사이트](http://13.209.5.217/)
+
 ## 사용한 기술들
 
 ## | Front End
