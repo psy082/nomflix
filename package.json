@@ -8,7 +8,9 @@
     "@testing-library/user-event": "^7.2.1",
     "@types/styled-components": "^4.4.2",
     "axios": "^0.18.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
+    "mongoose": "^5.8.11",
     "props-type": "^1.0.1",
     "react": "^16.12.0",
     "react-admin": "^3.2.0",
@@ -17,9 +19,11 @@
     "react-kakao-login": "^1.2.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.3.0",
+    "rxjs": "^6.5.4",
     "styled-components": "^4.4.1",
     "styled-reset": "^4.0.9",
-    "typescript": "^3.7.5"
+    "typescript": "^3.7.5",
+    "winston": "^3.2.1"
   },
   "scripts": {
     "start": "react-scripts start",

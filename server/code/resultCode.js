@@ -1,0 +1,11 @@
+const resultCode = {
+  OK: 200,
+  INVALID_ARGUMENT: 400,
+  UNAUTHENTICATED: 401,
+  PERMISSION_DENIED: 403,
+  NOT_FOUND: 404,
+  UNKNOWN: 500,
+  UNAVAILABLE: 503
+};
+
+module.exports = resultCode;

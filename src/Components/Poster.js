@@ -78,7 +78,7 @@ const Poster = ({
         </Rating>
       </ImageContainer>
       <Title>
-        {title.length > 18 ? `${title.substring(0, 18)}...` : title}
+        {title.length > 13 ? `${title.substring(0, 13)}...` : title}
       </Title>{" "}
       <Year>{year}</Year>
     </Container>
