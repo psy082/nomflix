@@ -4,6 +4,8 @@ import Helmet from "react-helmet";
 import Login from "../../Components/Login";
 
 const Container = styled.div`
+  display: flex;
+  justify-content: center;
   height: calc(100vh - 50px);
   width: 100%;
   position: relative;
@@ -26,8 +28,8 @@ const Backdrop = styled.div`
 
 const LoginContainer = styled.div`
   display: block;
-  margin: 0px auto;
   padding: 60px 68px 40px;
+  margin: 0px;
   width: 450px;
   height: 660px;
   border-radius: 5px;

@@ -2,9 +2,18 @@ import React from "react";
 import styled from "styled-components";
 import KakaoLogin from "react-kakao-login";
 
+import { authenticationService } from "../_services";
+
 const key = "441ae57defe8ff816b06321ae00f0d49";
 
-const success = console.log;
+const success = result => {
+  const { response, profile } = result;
+  let { access_token } = response;
+  let { id } = profile;
+  id = id.toString();
+
+  authenticationService.loginByKakao(id, access_token);
+};
 
 const failure = console.error;
 
@@ -15,8 +24,9 @@ const StyledKakaoLogin = styled(KakaoLogin).attrs(props => ({
   getProfile: props.getProfile
 }))`
   display: block;
+  position: relative;
   padding: 0;
-  margin: 0px auto;
+  margin: 100px auto;
   width: 222px;
   height: 49px;
   line-height: 49px;
@@ -37,6 +47,7 @@ const Login = () => (
     onSuccess={success}
     onFailure={failure}
     getProfile={true}
+    buttonText="kakao로 로그인하기"
   />
 );
 

@@ -1,6 +1,11 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
+import { authenticationService } from "../_services";
+
+const Empty = styled.header`
+  display: none;
+`;
 
 const Header = styled.header`
   color: white;
@@ -36,38 +41,49 @@ const SLink = styled(Link)`
   justify-content: center;
 `;
 
-const LoginContainer = styled.li`
+const LogoutContainer = styled.li`
   display: flex;
   height: 50px;
-  width: calc(100vw - 80 * 4px);
+  width: calc(100vw - 80 * 3.5px);
   justify-content: flex-end;
   margin: 0 0 0 auto;
 `;
 
-const Login = styled(Link)`
+const Logout = styled.button.attrs(props => ({
+  onClick: props.onClick
+}))`
   height: 50px;
-  font-size: 12px;
+  color: white;
+  font-size: 14px;
   font-weight: 200;
   display: flex;
   align-items: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: rgba(20, 20, 20, 0.8);
 `;
 
-export default withRouter(({ location: { pathname } }) => (
-  <Header>
-    <List>
-      <Item current={pathname === "/movie"}>
-        <SLink to="/movie">Movies</SLink>
-      </Item>
-      <Item current={pathname === "/tv"}>
-        <SLink to="/tv">TV</SLink>
-      </Item>
-      <Item current={pathname === "/search"}>
-        <SLink to="/search">Search</SLink>
-      </Item>
+export default withRouter(({ location: { pathname } }) =>
+  pathname !== "/" ? (
+    <Header>
+      <List>
+        <Item current={pathname === "/movie"}>
+          <SLink to="/movie">Movies</SLink>
+        </Item>
+        <Item current={pathname === "/tv"}>
+          <SLink to="/tv">TV</SLink>
+        </Item>
+        <Item current={pathname === "/search"}>
+          <SLink to="/search">Search</SLink>
+        </Item>
 
-      <LoginContainer>
-        <Login to="/">LOGIN</Login>
-      </LoginContainer>
-    </List>
-  </Header>
-));
+        <LogoutContainer>
+          <Logout onClick={authenticationService.logout}>Log out</Logout>
+        </LogoutContainer>
+      </List>
+    </Header>
+  ) : (
+    <Empty />
+  )
+);
