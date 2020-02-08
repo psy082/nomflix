@@ -6,7 +6,7 @@ import Login from "../../Components/Login";
 const Container = styled.div`
   display: flex;
   justify-content: center;
-  height: calc(100vh - 50px);
+  height: 120vh;
   width: 100%;
   position: relative;
   padding: 50px;
