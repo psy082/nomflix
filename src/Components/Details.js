@@ -15,12 +15,12 @@ const Container = styled.div`
   }
 `;
 
-const Image = styled.div`
-  background-image: url(${props => props.bgUrl});
-  width: ${props => (props.width ? props.width : "auto")};
-  height: ${props => (props.height ? props.height : "auto")};
+const Image = styled.img.attrs(props => ({ src: props.bgUrl }))`
+  width: 100%;
+  height: 125px;
   background-size: cover;
   background-position: center center;
+  margin-bottom: 10px;
   border-radius: 4px;
 `;
 
@@ -29,7 +29,7 @@ const Name = styled.div`
   margin-bottom: 3px;
 `;
 
-const Production = ({ name, imagePath, width, height }) => (
+const Production = ({ name, imagePath }) => (
   <Container>
     <Image
       bgUrl={
@@ -37,8 +37,6 @@ const Production = ({ name, imagePath, width, height }) => (
           ? `https://image.tmdb.org/t/p/original${imagePath}`
           : require("../assets/popcorn-time.png")
       }
-      height={height}
-      width={width}
     />
     <Name>{name}</Name>
   </Container>

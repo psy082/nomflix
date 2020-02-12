@@ -12,7 +12,6 @@ export default class extends React.Component {
       this.props.history.push("/movie");
     }
   }
-
   render() {
     return <HomePresenter />;
   }
