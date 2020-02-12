@@ -18,9 +18,9 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: ${props =>
     props.width
-      ? `repeat(auto-fit, ${props.width})`
+      ? `repeat(auto-fill, ${props.width})`
       : `repeat(auto-fill, 125px)`};
-  -webkit-box-pack: center;
+  /* -webkit-box-pack: center; */
   grid-gap: 25px;
 `;
 
