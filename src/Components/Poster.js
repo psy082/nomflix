@@ -10,7 +10,7 @@ const Container = styled.div`
 const Image = styled.div`
   background-image: url(${props => props.bgUrl});
   width: 100%;
-  height: 180px;
+  height: ${props => (props.height ? props.height : "180px")};
   background-size: cover;
   background-position: center center;
   border-radius: 4px;
@@ -68,13 +68,11 @@ const Poster = ({
               : require("../assets/popcorn-time.png")
           }
           height={height}
-          width={width}
         />
         <Rating>
           <span role="img" aria-label="rating">
             ⭐️
           </span>{" "}
-          {rating} / 10
         </Rating>
       </ImageContainer>
       <Title>
