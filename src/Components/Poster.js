@@ -73,6 +73,7 @@ const Poster = ({
           <span role="img" aria-label="rating">
             ⭐️
           </span>{" "}
+          {rating} / 10
         </Rating>
       </ImageContainer>
       <Title>
