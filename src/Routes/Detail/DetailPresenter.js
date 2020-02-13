@@ -247,7 +247,6 @@ const DetailPresenter = ({
                     key={production.name}
                     name={production.name}
                     imagePath={production.logo_path}
-                    height="150px"
                   />
                 ))}
               </Section>

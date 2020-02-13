@@ -17,7 +17,7 @@ const Container = styled.div`
 
 const Image = styled.img.attrs(props => ({ src: props.bgUrl }))`
   width: 100%;
-  height: 125px;
+  height: ${props => (props.height ? props.height : "125px")};
   background-size: cover;
   background-position: center center;
   margin-bottom: 10px;
@@ -29,7 +29,7 @@ const Name = styled.div`
   margin-bottom: 3px;
 `;
 
-const Production = ({ name, imagePath }) => (
+const Production = ({ name, imagePath, height }) => (
   <Container>
     <Image
       bgUrl={
@@ -37,6 +37,7 @@ const Production = ({ name, imagePath }) => (
           ? `https://image.tmdb.org/t/p/original${imagePath}`
           : require("../assets/popcorn-time.png")
       }
+      height={height}
     />
     <Name>{name}</Name>
   </Container>
