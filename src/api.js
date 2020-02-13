@@ -4,7 +4,6 @@ require("dotenv").config();
 const api = axios.create({
   baseURL: "https://api.themoviedb.org/3/",
   params: {
-    // api_key: process.env.APP_KEY,
     api_key: "4882eb78f0d3d7a3ccee479f49cf8657",
     language: "ko",
     region: "KR"
